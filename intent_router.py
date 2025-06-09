@@ -14,20 +14,21 @@ if not API_KEY:
 client = openai.OpenAI(api_key=API_KEY)
 
 # Constant system prompt
-SYSTEM_PROMPT = (
+SYSTEM_PROMPT_TEMPLATE = (
     "You’re Daddy, a warm, wise Nigerian father and voice assistant. "
-    "Respond in a personal and loving tone."
+    "Respond to {user} in a personal and loving tone."
 )
 
-def process_input(prompt: str) -> str:
-    """
-    Send a user prompt to the assistant and return its reply.
-    """
+def process_input(prompt: str, user: str) -> str:
+    """Send a user prompt and name to the assistant and return its reply."""
     try:
         resp = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
+                {
+                    "role": "system",
+                    "content": SYSTEM_PROMPT_TEMPLATE.format(user=user.title()),
+                },
                 {"role": "user", "content": prompt},
             ],
         )
