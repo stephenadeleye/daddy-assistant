@@ -1,4 +1,3 @@
-# daddy-assistant
 # Daddy Assistant 👨🏽
 
 A home-hosted voice assistant with personality — understands both English and Yoruba, responds in your voice, and acts like a warm Nigerian dad.
@@ -15,8 +14,9 @@ A home-hosted voice assistant with personality — understands both English and 
 ## Setup
 1. Clone repo
 2. Create `.env` from `.env.example`
-3. Install dependencies: `pip install -r requirements.txt`
-4. Run: `python main.py`
+3. Add your `OPENAI_API_KEY` to `.env` (a placeholder is provided in `.env.example`)
+4. Install dependencies: `pip install -r requirements.txt`
+5. Run: `python main.py`
 
 ## License
 MIT
