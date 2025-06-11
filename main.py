@@ -13,7 +13,8 @@ def main():
     print(get_greeting(user_name))
 
     while True:
-        user_input = input(f"\n{user_name.title()}: ")
+        from record_and_transcribe import record
+        user_input = record()
         if user_input.lower() in ['exit', 'quit']:
             break
 

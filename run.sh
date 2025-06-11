@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "👂 Launching Daddy Assistant..."
-source env/bin/activate
+source env\Scripts\activate
 python main.py
